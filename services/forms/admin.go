@@ -17,7 +17,7 @@ import (
 type AdminCreateUserForm struct {
 	LoginType          string `binding:"Required"`
 	LoginName          string
-	UserName           string `binding:"Required;Username;MaxSize(40)"`
+	UserName           string `binding:"Required;Username;MaxSize(400)"`
 	Email              string `binding:"Required;Email;MaxSize(254)"`
 	Password           string `binding:"MaxSize(255)"`
 	SendNotify         bool
@@ -34,7 +34,7 @@ func (f *AdminCreateUserForm) Validate(req *http.Request, errs binding.Errors) b
 // AdminEditUserForm form for admin to create user
 type AdminEditUserForm struct {
 	LoginType               string `binding:"Required"`
-	UserName                string `binding:"Username;MaxSize(40)"`
+	UserName                string `binding:"Username;MaxSize(400)"`
 	LoginName               string
 	FullName                string `binding:"MaxSize(100)"`
 	Email                   string `binding:"Required;Email;MaxSize(254)"`

@@ -91,7 +91,7 @@ func (f *InstallForm) Validate(req *http.Request, errs binding.Errors) binding.E
 
 // RegisterForm form for registering
 type RegisterForm struct {
-	UserName string `binding:"Required;Username;MaxSize(40)"`
+	UserName string `binding:"Required;Username;MaxSize(400)"`
 	Email    string `binding:"Required;MaxSize(254)"`
 	Password string `binding:"MaxSize(255)"`
 	Retype   string
@@ -240,7 +240,7 @@ func (f *IntrospectTokenForm) Validate(req *http.Request, errs binding.Errors) b
 
 // UpdateProfileForm form for updating profile
 type UpdateProfileForm struct {
-	Name                string `binding:"Username;MaxSize(40)"`
+	Name                string `binding:"Username;MaxSize(400)"`
 	FullName            string `binding:"MaxSize(100)"`
 	KeepEmailPrivate    bool
 	Website             string `binding:"ValidSiteUrl;MaxSize(255)"`
